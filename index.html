@@ -12,28 +12,47 @@
         </div>
 
         <div class="box">
-            <div class="display_board"></div>
+            <input type="text" value="" onkeypress="runScript(event)" id="calBox">
             <div class="num">
-                <input type="button" value="7">
-                <input type="button" value="8">
-                <input type="button" value="9">
-                <input type="button" value="/">
+                <input type="button" value="7" onclick='i(7)'>
+                <input type="button" value="8" onclick='i(8)'>
+                <input type="button" value="9" onclick='i(9)'>
+                <input type="button" value="/" onclick='i("/")'>
                 
-                <input type="button" value="4">
-                <input type="button" value="5">
-                <input type="button" value="6">
-                <input type="button" value="*">
+                <input type="button" value="4" onclick='i(4)'>
+                <input type="button" value="5" onclick='i(5)'>
+                <input type="button" value="6" onclick='i(6)'>
+                <input type="button" value="*" onclick='i("*")'>
 
-                <input type="button" value="1">
-                <input type="button" value="2">
-                <input type="button" value="3">
-                <input type="button" value="-">
+                <input type="button" value="1" onclick='i(1)'>
+                <input type="button" value="2" onclick='i(2)'>
+                <input type="button" value="3" onclick='i(3)'>
+                <input type="button" value="-" onclick='i("-")'>
 
-                <input type="button" value="0">
-                <input type="button" value=".">
-                <input type="button" value="=">
-                <input type="button" value="+">
+                <input type="button" value="0" onclick='i(0)'>
+                <input type="button" value="." onclick='i(".")'>
+                <input type="button" value="=" onclick="cal()">
+                <input type="button" value="+" onclick='i("+")'>
             </div>
         </div>
+        
+        <script>
+            function i(n1){
+                document.getElementById('calBox').value += n1;
+            }
+            function cal(){
+                var UI = eval(document.getElementById('calBox').value);
+                if (UI == undefined){
+                    document.getElementById('calBox').value = "";
+                }else{
+                document.getElementById('calBox').value = UI;
+                }
+            }
+            function runScript(e) {
+                if (e.keyCode == 13) {
+                    cal()
+                }
+            }
+        </script>
     </body>
 </html>

@@ -37,10 +37,13 @@ div.box{
 div.box:hover{
     box-shadow: 10px 10px 30px black;
 }
-div.display_board{
+#calBox{
     width: 96%;
-    height: 20%;
+    height: 10%;
+    color: gray;
     border-radius: 3px;
+    outline-style: none;
+    font-size: xx-large;
     background-color: rgb(255, 255, 255);
     border: 5px inset white;
     z-index: -1;
@@ -48,6 +51,7 @@ div.display_board{
 div.num{
     display: block;
     margin-top: 15%;
+    height: fit-content;
 }
 div.num input{
     color: white;
